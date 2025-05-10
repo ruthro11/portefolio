@@ -1,0 +1,819 @@
+@import url("https://use.typekit.net/ypl4nbb.css");
+
+@font-face {
+    font-family: 'ROYAL Hefana';
+    src: url('../font/ROYALHefanaRegular.woff2') format('woff2'),
+        url('../font/ROYALHefanaRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+}
+
+.example {
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-variation-settings: 'wght' 100;
+}
+
+body {
+    cursor: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+}
+
+main {
+    width: 300vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    /*  overflow: hidden;*/
+}
+
+.cursor {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    /* border: #FCF39F solid 2px;
+    border-radius: 90%; */
+    z-index: 10;
+    stroke-width: 3px;
+    pointer-events: none;
+}
+.pathCursor {
+    width: 30px;
+    height: 30px;
+    fill: #FCF39F;
+    transition: 1s;
+
+}
+
+#flecheCursor {
+    visibility: hidden;
+}
+
+
+.gridFull {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(8, 1fr);
+
+}
+
+.grid7 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid4 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.row5 {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    height: 7vh;
+    z-index: 9;
+    overflow: hidden;
+
+}
+
+footer {
+    position: fixed;
+    bottom: 7vh;
+    z-index: 9;
+}
+
+.nav {
+    position: fixed;
+    right: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 12vw;
+    height: 5vh;
+    grid-column: 7/9;
+}
+
+.bouleNav {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: solid #FCF39F 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 1s;
+
+}
+
+/* .barre{
+    background-color: black;
+    height: 2px;
+    width: 80%;
+    border-right: 50%;
+}
+.barre:nth-child(1){
+    transform: translateY(-20px);
+    transform: rotate(-45deg);
+}
+.barre:nth-child(2){
+    transform: translateY(20px);
+    transform: rotate(45deg);
+} */
+.titreNav {
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-variation-settings: "wght" 200;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 11;
+    color: #FCF39F;
+    transition: 1s;
+
+}
+
+.headerLogo {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20;
+    font-family: 'ROYAL Hefana';
+}
+
+.headerGrid {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 5/9;
+    width: 100%;
+    height: 100%;
+}
+
+.headerTitre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    font-weight: 200;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 15px;
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-variation-settings: "wght" 200;
+}
+
+.cls-1 {
+    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #FCF39F;
+    /* stroke: 2px #ff0000; */
+    stroke-linecap: round;
+    stroke-width: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.cls-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #FCF39F;
+    /* stroke: 2px #ff0000; */
+    stroke-linecap: round;
+    stroke-width: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.svgFonds1 {
+    position: absolute;
+    fill: #fde4d3;
+    stroke-width: 50px;
+    height: 15vw;
+    width: 15vw;
+}
+
+.imgFonds {
+    object-fit: cover;
+    width: 100vw;
+    height: 140vh;
+}
+
+.fonds {
+    width: 100%;
+    height: 100%;
+    z-index: -11;
+    position: absolute;
+    top: -40vh;
+}
+
+.grandePresentation {
+    grid-column: 2/9;
+}
+
+.TtTextePresentation {
+    grid-column: 1/5;
+}
+
+.divImagePresentation {
+    grid-column: 5/9;
+    display: grid;
+}
+
+.imgPresentation {
+    margin-top: 9vh;
+    width: 100%;
+    height: 82vh;
+    object-fit: cover;
+}
+
+.TtTextePresentation {
+    margin-top: 9vh;
+    height: 82vh;
+}
+
+.titrePresentation {
+    display: flex;
+    flex-direction: column;
+}
+
+.titrePresentation {
+    font-family: 'ROYAL Hefana';
+    font-variant: small-caps;
+    font-size: 2.47vw;
+    color: #FCF39F;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.titreContour {
+    -webkit-text-stroke: #FCF39F 0.5px;
+    color: rgba(255, 0, 0, 0);
+}
+
+.titreSuite {
+    font-size: 55%;
+    font-family: "asterisk-sans-variable", sans-serif;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+.hauteurTitre {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.textePresentation {
+    color: #FCF39F;
+    font-family: "asterisk-sans-variable", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.7;
+    max-width: 60ch;
+    font-size: 19;
+}
+
+.texte1 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.texte2 {
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+
+.accueilColec {
+    width: 100vw;
+    height: 100vh;
+    left: 100vw;
+    position: absolute;
+    z-index: 8;
+    overflow: hidden;
+}
+
+.textAcceuil {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column: 6/8;
+}
+
+#flecheCollection {
+    height: 8%;
+    width: 18%;
+    fill: #fde4d3;
+}
+
+.titreAcceuil {
+
+    font-family: 'ROYAL Hefana';
+    font-variant: small-caps;
+    font-size: 2.47vw;
+    color: rgba(253, 228, 211, 1);
+    display: flex;
+    align-items: end;
+    font-weight: 200;
+}
+
+.textPResentationAcceuil {
+    font-family: "asterisk-sans-variable", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.7;
+    /* plutôt qu'un px fixe */
+    max-width: 60ch;
+    font-size: 14;
+    color: rgba(253, 228, 211, 1);
+    width: 100%;
+}
+
+.textPResentationAcceuil p {
+    margin-top: 2vh;
+
+}
+
+.fondsLogos {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    left: 0;
+}
+
+.pont {
+    position: absolute;
+    height: 120%;
+    left: -15%;
+
+}
+
+.cls-3 {
+    fill: none;
+    stroke: #fde4d3;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+}
+
+.demarage {
+    margin-top: 2vh;
+    margin-left: 56.5%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.demarage p {
+    margin-top: 0;
+}
+
+.displayColec {
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    overflow :hidden;
+}
+
+.flecheCollec {
+    stroke-width: 2px;
+    margin-right: 25px;
+}
+
+.G {
+    grid-column: 1/2;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.D {
+    grid-column: 8/9;
+    display: flex;
+    justify-content: center;
+}
+
+.croixZoom {
+    position: absolute;
+    top: 6vh;
+    margin-left: -40px;
+    width: 32px;
+    height: 32px;
+    border: solid #251D1A 1px;
+    border-radius: 50%;
+    z-index: 12;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
+}
+.a{
+    top: 6vh;
+    margin-left: 25px;
+    opacity: 1;
+}
+.croix {
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+.barre1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.barre2 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.divColec {
+    grid-column: 2/8;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 81.5%;
+    overflow: hidden;
+    margin-top: 1.5%;
+
+}
+
+.touteSalle {
+    width: 2700%;
+    height: 81.5%;
+    display: grid;
+    grid-template-columns: 8fr 8fr 11fr;
+    margin-left: 0%;
+    transition: 1.5s;
+    gap: 20px;
+}
+
+.longueGonias {
+    display: grid;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 20px;
+    margin-left: 0%;
+
+
+}
+
+.longueNeotos {
+    display: grid;
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 20px;
+    margin-left: 0%;
+
+}
+
+.longueLogos {
+    display: grid;
+    grid-column: 3/4;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(22, 1fr);
+    gap: 20px;
+    margin-left: 0%;
+
+}
+
+.grpImgLeg {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* background-color: rgba(0, 0, 255, 0.301); */
+}
+
+.imageColec {
+    object-fit: cover;
+    height: 95%;
+    width: 100%;
+    /* background-color: #FCF39F; */
+}
+
+.imgColec {
+
+    width: 100%;
+    height: 100%;
+}
+
+.legendPetite {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: end;
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-size: 15;
+    /* background-color: aqua; */
+}
+
+.biographie {
+    position: absolute;
+    opacity: 0;
+    cursor: none;
+    z-index: 2;
+    left: 200vw;
+    top: 11vh;
+    width: calc(24vw - 25px);
+    height: 80.95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.titreBio {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    font-family: 'ROYAL Hefana';
+    font-weight: 100;
+    font-size: 30 ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choixBio {
+    width: 10%;
+    height: 15px;
+    border-radius: 25px;
+    border: solid #251D1A 1px;
+    background-color: #7C7C7C;
+}
+
+.rondsChoix {
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+}
+.texteBio{
+    width: 200%;
+    height: 94%;
+    margin-top: 1%;
+    margin-left: 0%;
+    display: grid;
+    grid-template-columns: repeat(99% 99%);
+    gap: 2%;
+}
+.legendeBio {
+    grid-column: 1/2;
+    width: 100%;
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-size: 14;
+    line-height: 2;
+    max-width: 60ch;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.Biolegende{
+    grid-column: 2/3;
+    width: 100%;
+    font-family: "asterisk-sans-variable", sans-serif;
+    font-size: 14;
+    line-height: 2;
+    max-width: 60ch;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.section3 {
+    align-items: center;
+}
+
+.fondsGonias {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -7;
+}
+
+.fondsGonias img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.titreCalendrier {
+    display: flex;
+    width: 30%;
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+    color: #F7C1DA;
+    font-family: "asterisk-sans-variable";
+}
+
+.fleche {
+    width: 35px;
+    height: 35px;
+    stroke: #F7C1DA;
+}
+
+.calendier {
+    grid-column: 2/6;
+    height: 60%;
+    width: 100%;
+}
+
+.calendrierGroupe {
+    width: 85%;
+    height: 80%;
+    justify-items: center;
+    align-items: center;
+    gap: 0;
+}
+
+.bouleCalendrier {
+    width: 8vh;
+    height:8vh;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: "asterisk-sans-variable";
+    font-size: 12;
+    transition: 1s;
+}
+.reserver{
+    background-color: red;
+    color: #251D1A;
+    transition: 1s;
+}
+.jusify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.calendrierAnnee {
+    margin-left: 25px;
+}
+
+.ouvert {
+    position: absolute;
+    height: 100vh;
+    width: calc(100vw - 25px);
+    display: grid;
+    top: 0vh;
+    left: 100vw;
+    padding-left: 25px;
+    background-color: white;
+    transition: 1s;
+
+
+}
+
+.gridOuvert {
+    grid-column: 1/6;
+    margin-top: 7vh;
+    height: 85vh;
+    width: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    overflow: hidden;
+    transition: 1s;
+    
+}
+
+.bioOuvert {
+    left: calc(175vw + 25px);
+    transition: 1s;
+    opacity: 1;
+    transition-delay: 1.5s;
+    pointer-events: all;
+}
+
+.displayNone {
+    display: none;
+}
+
+.tickets {
+    display: grid;
+    grid-column: 7/9;
+    width: 100%;
+    height: 52%;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10%;
+}
+
+.sansDate {
+    background-color: #7C7C7C;
+    color: #7C7C7C;
+    transition: 0.5s;
+}
+
+.titreAchat {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-family: 'ROYAL Hefana';
+    text-transform: uppercase;
+    color: #F7C1DA;
+    font-size: 3vh;
+}
+
+.bas {
+    align-items: end;
+}
+
+.cercle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #F7C1DA 1px;
+    color: #F7C1DA;
+}
+
+.quantite {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 10%;
+    color: #F7C1DA;
+
+}
+
+.categorie {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-family: "asterisk-sans-variable";
+    font-size: 17;
+    text-transform: uppercase;
+    color: #F7C1DA;
+}
+
+.categorie :nth-child(2) {
+    font-size: 14;
+    text-transform: lowercase;
+    margin-top: 2%;
+}
